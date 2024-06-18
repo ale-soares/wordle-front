@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "theme-blue": "#619CFE",
-        "theme-gray": "#292929",
-        "theme-light-gray": "#363636",
-        "theme-white": "#C2C2C2",
+        "theme-blue": "#222325",
+        "theme-gray": "#1E1E1E",
+        "theme-light-gray": "#8A8A97",
+        "theme-black": "#1E1E1E",
       },
       fontFamily: {
         sans: "Roboto, sans-serif",
@@ -18,6 +18,9 @@ export default {
         header: "64px",
         section: "32px",
         detail: "14px",
+      },
+      lineHeight: {
+        "extra-snug": "1.3",
       },
     },
   },
