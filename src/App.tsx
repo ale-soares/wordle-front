@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import GridItem from "./components/GridItem";
 import KeyboardButton from "./components/KeyboardButton";
+import Navbar from "./sections/Navbar";
 
 import { keys } from "./mocks/Keyboard";
 
@@ -34,35 +35,38 @@ const App = () => {
     setGuess([]);
   };
 
-  console.log(guess);
+  // console.log(guess);
 
   return (
     <>
-      <h1 className="text-theme-light-gray text-2xl">{targetWord}</h1>
-      <div className="flex">
-        {Array.from(targetWord).map((_, index) => (
-          <GridItem char={guess[index]} />
+      <Navbar />
+      <div className="px-80">
+        <h1 className="text-theme-light-gray text-2xl">{targetWord}</h1>
+        <div className="flex">
+          {Array.from(targetWord).map((_, index) => (
+            <GridItem char={guess[index]} />
+          ))}
+        </div>
+        {keys.map((char) => (
+          <KeyboardButton
+            disabled={guess.length >= targetWord.length}
+            char={char}
+            onClick={() => handleCharSelect(char)}
+          />
         ))}
+        <button
+          onClick={handleDelete}
+          className="text-theme-light-gray text-2xl border"
+        >
+          delete
+        </button>
+        <button
+          onClick={handleConfirm}
+          className="text-theme-light-gray text-2xl border"
+        >
+          enter
+        </button>
       </div>
-      {keys.map((char) => (
-        <KeyboardButton
-          disabled={guess.length >= targetWord.length}
-          char={char}
-          onClick={() => handleCharSelect(char)}
-        />
-      ))}
-      <button
-        onClick={handleDelete}
-        className="text-theme-light-gray text-2xl border"
-      >
-        delete
-      </button>
-      <button
-        onClick={handleConfirm}
-        className="text-theme-light-gray text-2xl border"
-      >
-        enter
-      </button>
     </>
   );
 };

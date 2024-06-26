@@ -5,8 +5,9 @@ export default {
     extend: {
       colors: {
         "theme-blue": "#222325",
-        "theme-gray": "#1E1E1E",
-        "theme-light-gray": "#8A8A97",
+        "theme-dark-gray": "#1E1E1E",
+        "theme-medium-gray": "#8A8A97",
+        "theme-light-gray": "#BFBFBF",
         "theme-black": "#1E1E1E",
       },
       fontFamily: {
