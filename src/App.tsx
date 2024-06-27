@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import GridItem from "./components/GridItem";
+// import GridItem from "./components/GridItem";
+import WordGrid from "./sections/WordGrid";
 import KeyboardButton from "./components/KeyboardButton";
 
 import Navbar from "./sections/Navbar";
@@ -42,13 +43,9 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="mt-8 px-80">
+      <div className="mt-8 lg:px-80">
         <Difficulty />
-        <div className="flex">
-          {Array.from(targetWord).map((_, index) => (
-            <GridItem char={guess[index]} />
-          ))}
-        </div>
+        <WordGrid targetWord={targetWord} guess={guess} />
         {keys.map((char) => (
           <KeyboardButton
             disabled={guess.length >= targetWord.length}

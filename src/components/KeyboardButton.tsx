@@ -11,7 +11,7 @@ const KeyboardButton: React.FC<KeyboardButtonProps> = ({
 }) => {
   return (
     <button
-      className="text-theme-light-gray text-body p-3 border"
+      className="text-theme-light-gray text-body p-3 border min-w-12"
       onClick={onClick}
       disabled={disabled}
     >
