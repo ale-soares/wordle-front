@@ -46,25 +46,21 @@ const App = () => {
       <div className="mt-8 lg:px-80">
         <Difficulty />
         <WordGrid targetWord={targetWord} guess={guess} />
-        {keys.map((char) => (
-          <KeyboardButton
-            disabled={guess.length >= targetWord.length}
-            char={char}
-            onClick={() => handleCharSelect(char)}
-          />
-        ))}
-        <button
-          onClick={handleDelete}
-          className="text-theme-light-gray text-body border"
-        >
-          delete
-        </button>
-        <button
-          onClick={handleConfirm}
-          className="text-theme-light-gray text-body border"
-        >
-          enter
-        </button>
+        <div className="flex justify-center">
+          {keys.map((char) => (
+            <KeyboardButton
+              disabled={guess.length >= targetWord.length}
+              char={char}
+              onClick={() => handleCharSelect(char)}
+            />
+          ))}
+          <button onClick={handleDelete} className="text-body border">
+            delete
+          </button>
+          <button onClick={handleConfirm} className="text-body border">
+            enter
+          </button>
+        </div>
       </div>
     </>
   );
