@@ -1,22 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { RootState } from "../store";
+import type { RootState } from "../types/RootState";
 
 interface CounterState {
-  counter: number;
+  count: number;
 }
 
 const initialState: CounterState = {
   // status: "idle",
   // entities: {},
-  counter: 0,
+  count: 0,
 };
 
-const guessSlice = createSlice({
-  name: "guess",
+const counterSlice = createSlice({
+  name: "counter",
   initialState,
   reducers: {
     increment(state) {
-      state.counter += 1;
+      state.count += 1;
     },
     // charAdded(state, action) {
     //   const todo = action.payload;
@@ -30,8 +30,8 @@ const guessSlice = createSlice({
   },
 });
 
-export const { increment } = guessSlice.actions;
+export const { increment } = counterSlice.actions;
 
-export const selectCount = (state: RootState) => state.guess.counter;
+export const selectCount = (state: RootState) => state.counter.count;
 
-export default guessSlice.reducer;
+export default counterSlice.reducer;
