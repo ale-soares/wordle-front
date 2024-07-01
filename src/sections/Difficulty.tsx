@@ -17,7 +17,7 @@ const Difficulty = () => {
   };
 
   return (
-    <div className="text-theme-light-gray text-center">
+    <div className="text-center">
       <h1 className="text-section">difficulty</h1>
       <select
         className="text-theme-dark-gray mb-4"
