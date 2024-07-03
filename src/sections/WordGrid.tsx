@@ -4,9 +4,11 @@ import { increment } from "../features/counterSlice";
 
 import GridItem from "../components/GridItem";
 
+import type { Guess } from "../types/Guess";
+
 interface WordGridProps {
   targetWord: string;
-  guess: string[];
+  guess: Guess;
 }
 
 const WordGrid: React.FC<WordGridProps> = ({ targetWord, guess }) => {
@@ -17,7 +19,7 @@ const WordGrid: React.FC<WordGridProps> = ({ targetWord, guess }) => {
     <div>
       <div className="flex justify-center">
         {Array.from(targetWord).map((_, index) => (
-          <GridItem char={guess[index]} />
+          <GridItem char={guess.guess.find((g) => g.id === index)} />
         ))}
       </div>
       <h1>{count}</h1>
